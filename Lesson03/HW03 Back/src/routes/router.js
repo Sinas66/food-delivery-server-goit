@@ -5,6 +5,7 @@ const { getProductsById } = require(`./products`)
 const getUsersRoute = require('./users/get-users-route')
 const { getUserById, createUser } = require('./users')
 const createOrder = require('./orders/create-order')
+const savePic = require(`./image/save-pic`)
 
 router.get(`/`, (req, res) => {
   res.end(`Hello World`)
@@ -15,7 +16,7 @@ router.get(`/`, (req, res) => {
   .get(`/users/:id`, getUserById)
   .post(`/users`, createUser)
   .post('/orders', createOrder)
-// .post('images', null)
+  .post('/image', savePic)
 
 
 module.exports = router;
